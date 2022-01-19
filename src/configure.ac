@@ -22,8 +22,8 @@ PKG_CHECK_MODULES([ZMQ], [libzmq], [
 ])
 
 if test "x$ZMQ_BUILD_LOCALLY" != x; then
-    if test "x$ZMQ_VERSION" == x; then ZMQ_VERSION="4.3.1"; fi
-    if test "x$ZMQ_GIT_REPO" == x; then ZMQ_GIT_REPO="https://github.com/zeromq/libzmq"; fi
+    if test "x$ZMQ_VERSION" = x; then ZMQ_VERSION="4.3.1"; fi
+    if test "x$ZMQ_GIT_REPO" = x; then ZMQ_GIT_REPO="https://github.com/zeromq/libzmq"; fi
     if test ! -d libzmq/.git; then git clone $ZMQ_GIT_REPO libzmq; fi
     AC_CONFIG_SUBDIRS([libzmq])
     # Ensure the libzmq/configure script is generated
