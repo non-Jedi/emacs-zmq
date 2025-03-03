@@ -28,7 +28,8 @@ configure: src/configure
         --prefix=$(CURDIR) \
 		--enable-shared=emacs-zmq --enable-static=zeromq \
 		--without-docs --enable-drafts=yes --enable-libunwind=no \
-		--disable-curve-keygen --disable-perf --disable-eventfd
+		--disable-curve-keygen --disable-perf --disable-eventfd \
+		--disable-Werror
 
 $(EZMQ_LIBDIR)/$(EZMQ_MODULE): src/Makefile
 	$(MAKE) -C src
